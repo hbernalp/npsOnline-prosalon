@@ -1,0 +1,550 @@
+<style>
+  .submitted-message {
+    background-color: rgb(0 0 0);
+    border: 1px solid #000000;
+    border-radius: 4px;
+    padding: 32px 45px;
+    color: white;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 900;
+}
+
+.submitted-message p {
+    color: white;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 900;
+}
+
+.hs_error_rollup {
+    display: none !important;
+}
+
+body {
+    background: #141414;
+}
+
+form {
+    background-color: transparent;
+    border: none;
+}
+
+.hs-form-field>label {
+    background-color: transparent;
+    color: #ffffff;
+    font-size: 14px;
+}
+
+ul.inputs-list.multi-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 62px;
+    width: 100%;
+    font-size: 1em;
+    border: 0;
+    border-radius: 14px;
+    overflow: hidden;
+    background: -webkit-linear-gradient( 100deg, #28A637 5%, #009452 15%, #00b8f3 25%, #0070B7 35%, #80519A 45%, #B93086 55%,#E3006E 65%, #E64325 75%, #EE8107 85%, #F8B246 95% );
+    background: -moz-linear-gradient( 100deg, #28A637 5%, #009452 15%, #00b8f3 25%, #0070B7 35%, #80519A 45%, #B93086 55%,#E3006E 65%, #E64325 75%, #EE8107 85%, #F8B246 95% );
+    background: -o-linear-gradient( 100deg, #28A637 5%, #009452 15%, #00b8f3 25%, #0070B7 35%, #80519A 45%, #B93086 55%,#E3006E 65%, #E64325 75%, #EE8107 85%, #F8B246 95% );
+    background: -ms-linear-gradient( 100deg, #28A637 5%, #009452 15%, #00b8f3 25%, #0070B7 35%, #80519A 45%, #B93086 55%,#E3006E 65%, #E64325 75%, #EE8107 85%, #F8B246 95% );
+    background: linear-gradient( 100deg, #28A637 5%, #009452 15%, #00b8f3 25%, #0070B7 35%, #80519A 45%, #B93086 55%,#E3006E 65%, #E64325 75%, #EE8107 85%, #F8B246 95% );
+    color: #000000;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    /* margin: 0; */
+    padding: 0;
+    list-style-type: none;
+}
+
+/* Custom Input */
+ul.inputs-list.multi-container li.hs-form-radio label {
+    position: relative;
+    width: 100%;
+    display: block;
+    box-sizing: border-box;
+    height: 100%;
+}
+
+ul.inputs-list.multi-container li.hs-form-radio label span {
+    position: absolute;
+    top: 50%;
+    line-height: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    font-size: 21px;
+    font-weight: 900;
+    cursor: pointer;
+}
+
+/* Hide the original radio select */
+ul.inputs-list.multi-container li.hs-form-radio label input {
+    -webkit-appearance: inherit;
+    width: 100%;
+    height: 100%;
+    transition: background 300ms ease-out;
+    margin: 0;
+    outline: 0;
+    border-left: 1px solid rgba(0, 0, 0, 0.05);
+    box-sizing: border-box;
+    padding: initial;
+    border: initial;
+    cursor: pointer;
+    /* background-color: #c37006; */
+}
+
+ul.inputs-list.multi-container li.hs-form-radio label input:checked {
+    border: none;
+}
+
+ul.inputs-list.multi-container li.hs-form-radio label input:checked + span {
+    color: white;
+}
+
+ul.inputs-list.multi-container li.hs-form-radio {
+    width: 100%;
+    position: relative;
+    height: calc(100% - 10px);
+    padding: 0;
+    margin: 0;
+    margin: 0px 2px 0px 3px;
+    background: white;
+}
+
+ul.inputs-list.multi-container li.hs-form-radio:first-child {
+    border-radius: 10px 0 0 10px;
+    margin-left: 5px;
+}
+
+ul.inputs-list.multi-container li.hs-form-radio:nth-child(1) span {
+    color: #28A637;
+}
+
+ul.inputs-list.multi-container li.hs-form-radio:nth-child(1) label input:checked {
+    background-color: #139c45;
+    background: -webkit-linear-gradient( 100deg, #27A638 0%, #149D45 100%);
+    background: -moz-linear-gradient( 100deg, #27A638 0%, #149D45 100%);
+    background: -o-linear-gradient( 100deg, #27A638 0%, #149D45 100%);
+    background: -ms-linear-gradient( 100deg, #27A638 0%, #149D45 100%);
+    background: linear-gradient( 100deg, #27A638 0%, #149D45 100%);
+}
+
+ul.inputs-list.multi-container li.hs-form-radio:nth-child(2) span {
+    color: #009452;
+}
+
+ul.inputs-list.multi-container li.hs-form-radio:nth-child(2) label input:checked {
+    background-color: #009452;
+    background: -webkit-linear-gradient( 100deg, 100deg, #129D47 0%, #009452 50%, #00a6a3 100%);
+    background: -moz-linear-gradient( 100deg, 100deg, #129D47 0%, #009452 50%, #00a6a3 100%);
+    background: -o-linear-gradient( 100deg, 100deg, #129D47 0%, #009452 50%, #00a6a3 100%);
+    background: -ms-linear-gradient( 100deg, #129D47 0%, #009452 50%, #00a6a3 100%);
+    background: linear-gradient( 100deg, #129D47 0%, #009452 50%, #00a6a3 100%);
+}
+
+ul.inputs-list.multi-container li.hs-form-radio:nth-child(3) span {
+    color: #00b8f3;
+}
+
+ul.inputs-list.multi-container li.hs-form-radio:nth-child(3) label input:checked {
+    background-color: #00b8f3;
+    background: -webkit-linear-gradient( 100deg, #00A7A7 0%, #00b8f3 50%, #0090d1 100%);
+    background: -moz-linear-gradient( 100deg, #00A7A7 0%, #00b8f3 50%, #0090d1 100%);
+    background: -o-linear-gradient( 100deg, #00A7A7 0%, #00b8f3 50%, #0090d1 100%);
+    background: -ms-linear-gradient( 100deg, #00A7A7 0%, #00b8f3 50%, #0090d1 100%);
+    background: linear-gradient( 100deg, #00A7A7 0%, #00b8f3 50%, #0090d1 100%);
+}
+
+ul.inputs-list.multi-container li.hs-form-radio:nth-child(4) span {
+    color: #0070B7;
+}
+
+ul.inputs-list.multi-container li.hs-form-radio:nth-child(4) label input:checked {
+    background-color: #0070B7;
+    background: -webkit-linear-gradient( 100deg, #0094D5 0%, #0070B7 50%, #3d62aa 100%);
+    background: -moz-linear-gradient( 100deg, #0094D5 0%, #0070B7 50%, #3d62aa 100%);
+    background: -o-linear-gradient( 100deg, #0094D5 0%, #0070B7 50%, #3d62aa 100%);
+    background: -ms-linear-gradient( 100deg, #0094D5 0%, #0070B7 50%, #3d62aa 100%);
+    background: linear-gradient( 100deg, #0094D5 0%, #0070B7 50%, #3d62aa 100%);
+}
+
+ul.inputs-list.multi-container li.hs-form-radio:nth-child(5) span {
+    color: #80519A;
+}
+
+ul.inputs-list.multi-container li.hs-form-radio:nth-child(5) label input:checked {
+    background-color: #80519A;
+    background: -webkit-linear-gradient( 100deg, #4061A9 0%, #80519A 50%, #934593 100%);
+    background: -moz-linear-gradient( 100deg, #4061A9 0%, #80519A 50%, #934593 100%);
+    background: -o-linear-gradient( 100deg, #4061A9 0%, #80519A 50%, #934593 100%);
+    background: -ms-linear-gradient( 100deg, #4061A9 0%, #80519A 50%, #934593 100%);
+    background: linear-gradient( 100deg, #4061A9 0%, #80519A 50%, #934593 100%);
+}
+
+ul.inputs-list.multi-container li.hs-form-radio:nth-child(6) span {
+    color: #B93086;
+}
+
+ul.inputs-list.multi-container li.hs-form-radio:nth-child(6) label input:checked {
+    background-color: #B93086;
+    background: -webkit-linear-gradient( 100deg, #9B4190 0%, #C81F7E 100%);
+    background: -moz-linear-gradient( 100deg, #9B4190 0%, #C81F7E 100%);
+    background: -o-linear-gradient( 100deg, #9B4190 0%, #C81F7E 100%);
+    background: -ms-linear-gradient( 100deg, #9B4190 0%, #C81F7E 100%);
+    background: linear-gradient( 100deg, #9B4190 0%, #C81F7E 100%);
+}
+
+ul.inputs-list.multi-container li.hs-form-radio:nth-child(7) span {
+    color: #E3006E;
+}
+
+ul.inputs-list.multi-container li.hs-form-radio:nth-child(7) label input:checked {
+    background-color: #E3006E;
+    background: -webkit-linear-gradient( 100deg, #CC1B7C 0%, #E41558 100%);
+    background: -moz-linear-gradient( 100deg, #CC1B7C 0%, #E41558 100%);
+    background: -o-linear-gradient( 100deg, #CC1B7C 0%, #E41558 100%);
+    background: -ms-linear-gradient( 100deg, #CC1B7C 0%, #E41558 100%);
+    background: linear-gradient( 100deg, #CC1B7C 0%, #E41558 100%);
+}
+
+ul.inputs-list.multi-container li.hs-form-radio:nth-child(8) span {
+    color: #E64325;
+}
+
+ul.inputs-list.multi-container li.hs-form-radio:nth-child(8) label input:checked {
+    background-color: #E64325;
+    background: -webkit-linear-gradient( 100deg, #E51C50 0%, #E8531E 100%);
+    background: -moz-linear-gradient( 100deg, #E51C50 0%, #E8531E 100%);
+    background: -o-linear-gradient( 100deg, #E51C50 0%, #E8531E 100%);
+    background: -ms-linear-gradient( 100deg, #E51C50 0%, #E8531E 100%);
+    background: linear-gradient( 100deg, #E51C50 0%, #E8531E 100%);
+}
+
+ul.inputs-list.multi-container li.hs-form-radio:nth-child(9) span {
+    color: #EE8107;
+}
+
+ul.inputs-list.multi-container li.hs-form-radio:nth-child(9) label input:checked {
+    background-color: #EE8107;
+    background: -webkit-linear-gradient( 100deg, #E95A1A 0%, #F18F19 100%);
+    background: -moz-linear-gradient( 100deg, #E95A1A 0%, #F18F19 100%);
+    background: -o-linear-gradient( 100deg, #E95A1A 0%, #F18F19 100%);
+    background: -ms-linear-gradient( 100deg, #E95A1A 0%, #F18F19 100%);
+    background: linear-gradient( 100deg, #E95A1A 0%, #F18F19 100%);
+}
+
+ul.inputs-list.multi-container li.hs-form-radio:nth-child(10) span {
+    color: #F8B246;
+}
+
+ul.inputs-list.multi-container li.hs-form-radio:nth-child(10) label input:checked {
+    background-color: #F8B246;
+    background: -webkit-linear-gradient( 100deg, #F2931E 0%, #F9B347 100%);
+    background: -moz-linear-gradient( 100deg, #F2931E 0%, #F9B347 100%);
+    background: -o-linear-gradient( 100deg, #F2931E 0%, #F9B347 100%);
+    background: -ms-linear-gradient( 100deg, #F2931E 0%, #F9B347 100%);
+    background: linear-gradient( 100deg, #F2931E 0%, #F9B347 100%);
+}
+
+ul.inputs-list.multi-container li.hs-form-radio:last-child {
+    border-radius: 0 10px 10px 0;
+    margin-right: 5px;
+}
+
+::marker {
+    color: #ff0000;
+    display: none;
+    position: inherit;
+    top: 0px;
+    left: 0px;
+}
+
+textarea {
+    width: 100%;
+    background: white;
+    border-radius: 10px;
+    margin-top: 14px;
+}
+
+.dnd_area-row-0-max-width-section-centering > .row-fluid {
+    max-width: 685px !important;
+}
+
+.legend-horizontal {
+    display: flex;
+    justify-content: space-between;
+    margin-top: -37px;
+}
+
+.legend-horizontal h4 {
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.legend-horizontal h4:first-child {
+    color: #28a637;
+}
+
+.legend-horizontal h4:last-child {
+    color: #f7ad40;
+}
+
+form input.hs-button {
+    background-color: #0070B7;
+    border: 1px solid #0070B7;
+    color: #fff;
+    cursor: pointer;
+}
+
+form input.hs-button:hover, form input.hs-button:focus, form .hs-button:hover, form .hs-button:focus {
+    background-color: #00b5e9;
+    border: 1px solid #01b8f3;
+    color: #fff;
+}
+
+@media only screen and (min-width: 726px) {
+    .hs_cromantic_online_canal_de_compra, .hs_cromantic_online_canal_de_compra + div, .hs_firstname, .hs_email, .hs_cromantic_documento, .hs_cromantic_telefono {
+        width: 50%;
+        display: inline-table;
+    }
+
+    .hs_email, .hs_cromantic_telefono, .hs_cromantic_online_canal_de_compra + div {
+        padding-left: 6px
+    }
+
+    .hs_firstname, .hs_cromantic_documento, .hs_cromantic_online_canal_de_compra {
+        padding-right: 6px
+    }
+}
+
+@media only screen and (max-width: 726px) {
+    ul.inputs-list.multi-container {
+        height: 12vw;
+        min-height: 44px;
+        max-height: 57px;
+    }
+
+    .dnd_area-row-0-padding {
+        padding-top: 29px !important;
+    }
+}
+
+@media only screen and (max-width: 555px) {
+    form {
+        padding: 0px
+    }
+}
+
+@media only screen and (max-width: 455px) {
+    ul.inputs-list.multi-container li.hs-form-radio {
+        width: 100%;
+        position: relative;
+        height: calc(100% - 5px);
+        padding: 0;
+        margin: 0;
+        margin: 0px 1px 0px 2px;
+        background: white;
+    }
+
+    ul.inputs-list.multi-container li.hs-form-radio {
+        width: 100%;
+        position: relative;
+        height: calc(100% - 5px);
+        padding: 0;
+        margin: 0;
+        margin: 0px 1px 0px 2px;
+        background: white;
+    }
+
+    ul.inputs-list.multi-container li.hs-form-radio:first-child {
+        border-radius: 10px 0 0 10px;
+        margin-left: 3px;
+    }
+
+    ul.inputs-list.multi-container li.hs-form-radio:last-child {
+        border-radius: 0 10px 10px 0;
+        margin-right: 3px;
+    }
+}
+
+h4 {
+}
+
+.hs-submit .actions {
+    text-align: center;
+}
+
+input[type='text'], input[type='email'], input[type='password'], input[type='tel'], input[type='number'], input[type='file'], select, textarea {
+    width: 100%;
+    background: white;
+    border-radius: 5px;
+    margin-top: 14px;
+    padding: 10px;
+}
+
+.hs_cromantic_feedback_ciudad span, .hs_cromantic_feedback_ciudad + div span, .hs_firstname span, .hs_email span, .hs_cromantic_documento span, .hs_cromantic_telefono span {
+    font-size: 14px;
+}
+
+.hs_cromantic_habeas_data .hs-field-desc {
+    color: white;
+}
+
+.hs_cromantic_habeas_data .hs-field-desc a {
+    color: #01b7f2;
+}
+
+.hs-form-field>label {
+    font-size: 14px;
+    padding: 0;
+}
+
+form .hs-richtext *, form .hs-richtext p {
+    color: white;
+    font-size: 19px;
+    font-weight: 400;
+}
+
+ul.inputs-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+[type='checkbox'], [type='radio'] {
+    width: 40px;
+}
+
+/* Custom Input */
+li.hs-form-booleancheckbox {
+    margin: 16px 0;
+}
+
+li.hs-form-booleancheckbox label {
+    position: relative;
+}
+
+li.hs-form-booleancheckbox label span:not(.hs-form-required) {
+    display: inline-block;
+    margin-left: 40px;
+    /* Width of the new radio select and any additional spacing on the left */
+    margin-right: 16px;
+    /* Additional spacing on the right */
+    margin-top: 5px;
+}
+
+/* Hide the original checkbox */
+li.hs-form-booleancheckbox label input {
+    height: 24px;
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    width: 24px;
+}
+
+/* Add new checkbox */
+li.hs-form-booleancheckbox label span::before {
+    border: 2px solid;
+    content: "";
+    height: 24px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 24px;
+    border-radius: 4px;
+    background-color: #ffffff;
+    border: #ffffff 1px solid;
+}
+
+/* Style new checked item */
+li.hs-form-booleancheckbox label span::after {
+    content: "";
+    border: 4px solid;
+    border-left: 0;
+    border-top: 0;
+    height: 16px;
+    left: 8px;
+    opacity: 0;
+    position: absolute;
+    top: 2px;
+    transform: rotate(45deg);
+    transition: opacity 0.2s ease-in-out;
+    width: 8px;
+    color: #0070b7;
+}
+
+/* Show when checked */
+li.hs-form-booleancheckbox label input:checked + span::after {
+    opacity: 1;
+}
+
+/* Style when focused */
+li.hs-form-booleancheckbox label input:focus + span::after {
+    outline: 3px solid transparent;
+    /* For Windows high contrast mode. */
+}
+
+li.hs-form-booleancheckbox span {
+    outline: 3px solid transparent;
+    /* For Windows high contrast mode. */
+}
+
+form .inputs-list:not(.no-list) label, form .inputs-list:not(.no-list) label>span, form .inputs-list:not(.no-list) label>span p {
+    color: #ffffff;
+}
+
+form .inputs-list:not(.no-list) label a, form .inputs-list:not(.no-list) label>span a, form .inputs-list:not(.no-list) label>span a {
+    color: #00b8f3;
+}
+
+li.hs-form-booleancheckbox label .hs-form-required {
+    margin-left: 5px;
+}
+
+.dnd_area-row-0-max-width-section-centering > .row-fluid {
+    max-width: 727px !important;
+}
+
+.dnd_area-row-0-padding {
+    padding-top: 100px !important;
+    padding-bottom: 20px !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    min-height: 80vh;
+}
+
+span.hs-form-required {
+    color: #c05e5e;
+    margin-left: 5px;
+}
+
+.loading .hs-richtext, .loading .hs_cromantic_online_canal_de_compra, .loading .hs_cromantic_online_canal_de_compra + div, .loading .hs_firstname, .loading .hs_email, .loading .hs_cromantic_documento, .loading .hs_cromantic_telefono, .loading .hs_cromantic_habeas_data, .loading .hs_submit {
+    display: none !important;
+}
+
+.stepone .hs_cromantic_feedback, .stepone .hs_cromantic_feedback_text2, .stepone .hs_cromantic_feedback_text1, .stepone .hs_cromantic_feedback_text3, .stepone .hs-continue {
+    display: none !important;
+}
+
+.hs-continue {
+    display: none;
+}
+
+.valid .hs-continue {
+    display: block;
+}
+
+.actions {
+    text-align: center;
+}
+
+ul.no-list.hs-error-msgs.inputs-list {
+    margin: 0;
+}
+
+  </style>
